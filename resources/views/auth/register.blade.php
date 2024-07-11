@@ -138,7 +138,7 @@
                         <li>
                             <a href="product.html">Auction</a>
                         </li>
-						<li>
+						{{-- <li>
 							<a href="#0">Dashboard</a>
 							<ul class="submenu">
 								<li>
@@ -163,7 +163,7 @@
 									<a href="referral.html">Referrals</a>
 								</li>
 							</ul>
-                             </li>
+                             </li> --}}
 
 						<li>
                             <a href="about.html">About Us</a>
