@@ -1,8 +1,11 @@
 <?php
 
-use App\Http\Controllers\CarController;
+use App\Http\Controllers\CarDealerController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,7 +21,12 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     //car data work
-    Route::get('carbid',[CarController::class,'carlist']);
+    Route::get('/car-dealer/notification', [CarDealerController::class, 'notification'])->name('car_dealer.notification');
+    Route::get('/car-dealer/select-cars', [CarDealerController::class, 'selectCars'])->name('car_dealer.select_cars');
+    Route::post('/car-dealer/save-selected-cars', [CarDealerController::class, 'saveSelectedCars'])->name('car_dealer.save_selected_cars');
+
+    Route::get('/customer/request-car', [CustomerController::class, 'requestCar'])->name('customer.request_car');
+    Route::post('/customer/save-car-request/{car}', [CustomerController::class, 'saveCarRequest'])->name('customer.save_car_request');
 });
 
 require __DIR__.'/auth.php';

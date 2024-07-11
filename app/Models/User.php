@@ -3,6 +3,7 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Car;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -45,4 +46,22 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function cars()
+    {
+        return $this->belongsToMany(Car::class, 'car_dealer_car', 'dealer_id', 'car_id');
+    }
+
+    public function selectedCars()
+    {
+        return $this->belongsToMany(Car::class, 'car_dealer_car', 'dealer_id', 'car_id');
+    }
+
+
+    public function carRequests()
+    {
+        return $this->belongsToMany(Car::class, 'car_customer_requests', 'customer_id', 'car_id');
+    }
+
+
 }
