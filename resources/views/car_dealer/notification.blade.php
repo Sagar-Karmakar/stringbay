@@ -326,6 +326,13 @@
                         <div>
                             <div class="container">
 
+
+                            @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                            @endif
+
                                 @foreach ($notifications as $notification)
                                     <div class="mb-3 card">
                                         <div class="card-body">

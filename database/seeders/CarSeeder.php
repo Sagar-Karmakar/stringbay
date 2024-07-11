@@ -14,10 +14,18 @@ class CarSeeder extends Seeder
     public function run(): void
     {
         DB::table('cars')->insert([
-            ['make' => 'Toyota', 'model' => 'Camry', 'year' => 2020],
-            ['make' => 'Honda', 'model' => 'Accord', 'year' => 2021],
-            ['make' => 'Zephyr Motors', 'model' => 'Horizon XR7', 'year' => 2005],
-            ['make' => 'Vortex Innovations', 'model' => 'Cyclone SX', 'year' => 2021],
+            ['make' => 'Maruti Suzuki', 'model' => 'Swift', 'year' => 2005],
+            ['make' => 'Hyundai', 'model' => 'Creta', 'year' => 2015],
+            ['make' => 'Tata Motors', 'model' => 'Nexon', 'year' => 2017],
+            ['make' => 'Kia', 'model' => 'Seltos', 'year' => 2019],
+            ['make' => 'Mahindra', 'model' => 'XUV300', 'year' => 2019],
+            ['make' => 'Toyota', 'model' => 'Fortuner', 'year' => 2009],
+            ['make' => 'Honda', 'model' => 'City', 'year' => 1998],
+            ['make' => 'Volkswagen', 'model' => 'Polo', 'year' => 2010],
+            ['make' => 'Renault', 'model' => 'Kwid', 'year' => 2015],
+            ['make' => 'Mahindra', 'model' => 'Scorpio-N', 'year' => 2022],
+            ['make' => 'Ford', 'model' => 'Mustang', 'year' => 1964],
+            ['make' => 'BMW', 'model' => '3 Series', 'year' => 1975],
             // Add more predefined cars
         ]);
     }

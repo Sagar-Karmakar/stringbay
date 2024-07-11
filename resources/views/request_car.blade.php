@@ -325,6 +325,13 @@
                     <div class="dashboard-widget">
                         <h5 class="mb-10 title">Request Car</h5> <br>
                         <div>
+
+                            @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                            @endif
+                            
                             @foreach ($cars as $car)
                             <div>
                                 <form action="{{ route('customer.save_car_request', $car) }}" method="POST">

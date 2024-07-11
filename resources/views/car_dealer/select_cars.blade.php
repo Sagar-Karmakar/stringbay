@@ -324,25 +324,38 @@
                     <div class="dashboard-widget">
                         <h5 class="mb-10 title">Select Cars</h5> <br>
                         <div>
-                            @if(session('success'))
-                            <p>{{ session('success') }}</p>
+                            @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
                             @endif
 
                         <form action="{{ route('car_dealer.save_selected_cars') }}" method="POST">
                             @csrf
-                            <ul>
+                            {{-- <ul> --}}
                                 @foreach ($allCars as $car)
-                                    <li>
-                                        <label>
-                                            <input type="checkbox" name="car_ids[]" value="{{ $car->id }}"
-                                                   @if(in_array($car->id, $selectedCars)) checked @endif>
-                                            {{ $car->make }} {{ $car->model }}
-                                        </label>
-                                    </li>
+
+
+                                    <label>
+                                        <input type="checkbox" name="car_ids[]" value="{{ $car->id }}"
+                                        @if(in_array($car->id, $selectedCars)) checked @endif>
+                                        {{ $car->make }}, {{ $car->model }}
+                                    </label>
+                                        {{-- <div class="card" style="width: 18rem;">
+                                            <img src="{{ asset('assets/images/auction/car/auction-1.jpg') }}" class="card-img-top" alt="...">
+                                            <div class="card-body">
+                                                <input type="checkbox" name="car_ids[]" value="{{ $car->id }}"
+                                                @if(in_array($car->id, $selectedCars)) checked @endif>
+                                                {{ $car->make }} , {{ $car->model }}
+                                            </div>
+                                          </div> --}}
+
                                 @endforeach
-                            </ul>
+                            {{-- </ul> --}}
                                 <button type="submit">Save Selected Cars</button>
                             </form>
+
+
 
                             {{-- <div class="col-sm-10 col-md-6">
                                 <div class="auction-item-2" data-aos="zoom-out-up" data-aos-duration="1000">

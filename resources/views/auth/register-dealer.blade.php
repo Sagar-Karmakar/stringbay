@@ -305,7 +305,7 @@
 
                                 <!-- Name -->
                         <div class="form-group mb-30">
-                            <x-input-label for="name" :value="__('Name')" />
+                            <label for="login-email"><i class="fa fa-user"></i></label>
                             <x-text-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
                         </div>
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -342,7 +342,7 @@
                         </div> --}}
 
                                 <!-- Confirm Password -->
-                        <div class="form-group mb-30">
+                        {{-- <div class="form-group mb-30">
                             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
                             <x-text-input id="password_confirmation" class="block w-full mt-1"
@@ -350,7 +350,7 @@
                                             name="password_confirmation" required autocomplete="new-password" />
 
                         </div>
-                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" /> --}}
 
 
                         <div class="form-group checkgroup ">
